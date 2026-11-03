@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | B.I.P Diversity – Genesis</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout.html">
+<header id="site-header"></header>
+<main>
+<div class="wrap"><h2>Checkout</h2>
+<div id="co-empty" class="card" hidden><p>Your cart is empty.</p><p class="actions"><a class="btn" href="shop.html">Back to the shop</a></p></div>
+<div id="co-done" class="card" hidden><h3>✅ Thank you!</h3><p id="co-done-msg"></p><p class="actions"><a class="btn" href="shop.html">Continue shopping</a> <a class="btn ghost" href="index.html">Home</a></p></div>
+<div class="co-grid" id="co-main">
+ <div>
+  <div class="card"><h3>1. Review your items</h3><p class="small">Added something by mistake? Use ✕ to remove it or − to reduce the quantity.</p><div id="co-items"></div>
+   <p class="actions"><a class="btn ghost" href="shop.html">Add more</a> <button class="btn ghost danger" id="clear-all">Remove all items</button></p></div>
+  <div class="card"><h3>2. Your details</h3>
+   <form id="delivery" onsubmit="return false">
+    <div class="two"><input id="c-name" placeholder="Full name" required><input id="c-email" type="email" placeholder="Email" required></div>
+    <input id="c-phone" type="tel" placeholder="Phone" required>
+    <div id="addr-fields"><input id="c-addr" placeholder="Street address" required><div class="two"><input id="c-city" placeholder="City" required><input id="c-code" placeholder="Postal code" pattern="[0-9]{4}" title="4-digit postal code" required></div></div>
+   </form></div>
+  <div class="card"><h3>3. Payment method</h3>
+   <label class="pay-opt"><input type="radio" name="pay" value="gpay"><span class="gp">G Pay</span><span><b>Google Pay</b><small>Pay with a card saved to your Google account</small></span></label>
+   <label class="pay-opt"><input type="radio" name="pay" value="payfast"><span class="pf">PayFast</span><span><b>PayFast</b><small>Card, instant EFT and more</small></span></label>
+   <div id="co-err" class="msg"></div></div>
+ </div>
+ <aside class="card" style="position:sticky;top:90px"><h3>Order summary</h3><div id="co-sum"></div><br><button id="to-review" style="width:100%">Review order</button></aside>
+</div></div>
+<dialog id="review">
+ <h3>Final review</h3><p class="small">Please check everything before you pay.</p>
+ <div class="review-box" id="rv-items"></div>
+ <div class="review-box" id="rv-sum"></div>
+ <div class="review-box"><div id="rv-ship"></div><div id="rv-pay" style="margin-top:6px"></div></div>
+ <h3 style="margin-top:14px">Order checklist</h3>
+ <label class="ckrow"><input type="checkbox" class="ck"> <span>The items and quantities above are correct</span></label>
+ <label class="ckrow"><input type="checkbox" class="ck"> <span>My contact and delivery details are correct</span></label>
+ <label class="ckrow"><input type="checkbox" class="ck"> <span>I have checked the total and chosen payment method</span></label>
+ <label class="ckrow"><input type="checkbox" class="ck"> <span>I accept the terms and returns policy</span></label>
+ <p class="actions"><button id="confirm" disabled>Confirm and pay</button> <button class="btn ghost" id="back">Back to edit</button></p>
+</dialog>
+</main>
+<footer id="site-footer"></footer>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
